@@ -1,0 +1,70 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-GB": {
+          "summary": "help desk agent that help questions regarding canada revenue agency",
+          "examplePhrases": [
+            "Alexa open canada revenue agency"
+          ],
+          "keywords": [
+            "canda",
+            "revenue",
+            "agency",
+            "help",
+            "desk",
+            "for",
+            "canada",
+            "revenue",
+            "agency"
+          ],
+          "name": "Canada revenue agency",
+          "description": "customer can ask the questions regarding the Canada revenue agency",
+          "smallIconUri": "file://assets/images/en-GB_smallIconUri.png",
+          "largeIconUri": "file://assets/images/en-GB_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "sourceLocaleForLanguages": [
+          {
+            "sourceLocale": "en-GB",
+            "language": "en"
+          }
+        ],
+        "isActive": true
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "nothing",
+      "category": "BUSINESS_AND_FINANCE",
+      "distributionMode": "PUBLIC",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:770739885701:function:134342ac-96e0-4b12-8009-7d227aa1a709:Release_0"
+        },
+        "interfaces": []
+      }
+    },
+    "manifestVersion": "1.0",
+    "permissions": [
+      {
+        "name": "alexa::profile:given_name:read"
+      }
+    ],
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "en-GB": {
+          "termsOfUseUrl": "https://drive.google.com/file/d/1kOkC383Q51f_jJ7rMwDCxeRX5aBpTMbf/view",
+          "privacyPolicyUrl": "https://drive.google.com/file/d/1kOkC383Q51f_jJ7rMwDCxeRX5aBpTMbf/view"
+        }
+      },
+      "containsAds": false,
+      "isExportCompliant": true,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}
