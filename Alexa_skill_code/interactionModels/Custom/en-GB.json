@@ -1,0 +1,213 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "canada revenue agency",
+      "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "dueDateForMyBalance",
+          "slots": [
+            {
+              "name": "Balance",
+              "type": "Balance"
+            }
+          ],
+          "samples": [
+            "i want to know the what is last date to full fill by balances",
+            "can i know the last day for paying my balance",
+            "what is due date for my balance"
+          ]
+        },
+        {
+          "name": "dueDateForIncomeTax",
+          "slots": [
+            {
+              "name": "incomeTax",
+              "type": "incomeTax"
+            }
+          ],
+          "samples": [
+            "cani know the last day to pay my income tax balance",
+            "what is due date for income tax balance"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "source deductions for payroll"
+              }
+            },
+            {
+              "name": {
+                "value": "sales tax"
+              }
+            },
+            {
+              "name": {
+                "value": "income tax"
+              }
+            }
+          ],
+          "name": "Balance"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "deceased person"
+              }
+            },
+            {
+              "name": {
+                "value": "trusts"
+              }
+            },
+            {
+              "name": {
+                "value": "incorporated bussiness"
+              }
+            },
+            {
+              "name": {
+                "value": "self employed"
+              }
+            },
+            {
+              "name": {
+                "value": "individual"
+              }
+            }
+          ],
+          "name": "incomeTax"
+        }
+      ],
+      "modelConfiguration": {
+        "fallbackIntentSensitivity": {
+          "level": "LOW"
+        }
+      }
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "dueDateForMyBalance",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "Balance",
+              "type": "Balance",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1470335575948.813220571916"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.682353048790.303390585672.323509335286",
+                  "values": [
+                    "source deductions for payroll",
+                    "sales tax",
+                    "income tax"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "dueDateForIncomeTax",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "incomeTax",
+              "type": "incomeTax",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.886296165179.758575407509"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.360936144616.683154140508.841682898786",
+                  "values": [
+                    "self employed",
+                    "individual",
+                    "trusts",
+                    "incorporated bussiness",
+                    "deceased person"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Slot.Validation.682353048790.303390585672.323509335286",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "can please enter valid balance type"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.360936144616.683154140508.841682898786",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "can you please tell me the valid income tax type that i have given to you ."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1470335575948.813220571916",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please select below balance type   like  income tax or sales tax or source deductions for payroll "
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.886296165179.758575407509",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what is the income tax type are you looking for like individual or self employed or incorporated business or trusts or deceased person"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "9"
+}
